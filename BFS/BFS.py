@@ -24,10 +24,3 @@ def bfs(graph, start):
                 queue.append(neighbor)
 
     return order
-
-def get_path(prev, target):
-    path = []
-    while target:
-        path.append(target)
-        target = prev[target]
-    return path[::-1]
