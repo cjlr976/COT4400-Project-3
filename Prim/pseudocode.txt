@@ -1,0 +1,12 @@
+MST-PRIM(G, w, r)
+1    for each u in G.V
+2        u.key = infinity
+3        u.pi = NIL
+4    r.key = 0
+5    Q = G.V
+6    while Q not equal to empty_set
+7        u = EXTRACT-MIN(Q)
+8       for each v in G.Adj[u]
+9            if v in Q and w(u, v) < v.key
+10               v.pi = u
+11               v.key = w(u, v)

@@ -24,3 +24,11 @@ graph = {
     'P': [('O', 1), ('N', 3), ('Q', 11)],
     'Q': [('M', 10), ('P', 11)]
 }
+
+def print_adjacency_list(graph):
+    print("\n--- Hospital Graph Adjacency List ---")
+    for node, edges in graph.items():
+        # Formats edges as: A -> B(3), E(9), D(10)
+        edge_strings = [f"{neighbor}({weight})" for neighbor, weight in edges]
+        print(f"{node} -> {', '.join(edge_strings)}")
+    print("-------------------------------------\n")
