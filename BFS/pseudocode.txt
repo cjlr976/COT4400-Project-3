@@ -1,6 +1,6 @@
 Algorithm bfs(graph, start):​
 
-    queue = Deque()​
+    queue = deque(start)​
     queue.append(start)​
 
     visited = set()​
