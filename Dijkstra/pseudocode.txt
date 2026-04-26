@@ -1,0 +1,45 @@
+'''
+input: 
+* graph: undirected weighted graph with nonnegative edges
+* start: starting vertex
+
+output: 
+* dist[]: Length of shortest path from vertex v to vertex u
+* prev[]: Previous nodes for path reconstruction
+'''
+
+funct dijkstra(graph, start):
+    initialize priority queue PQ
+    push (0,start) into PQ
+
+    for each node in graph:
+        dist[node] = inf
+        prev[node] = None
+    dist[start] = 0
+
+    while PQ is not empty:
+        (current_dist, u).RemoveMin(PQ)
+
+        # Skip outdated entries
+        if current distance > dist[node]:
+            continue
+
+        for each (neighbor,weight) in graph[u] do: 
+            new_dist = current_dist + weight
+
+            #Relaxation
+            if new_dist < dist[neightbor] do:
+                dist[neighbor] = new_dist
+                prev[neighbor] = u
+                push (new_dist, neighbor) into PQ
+    
+    return dist, prev
+
+#Reconstruct shortest path
+funct get_path(prev, target):
+    initialize empty path []
+    while target is not null:
+        append target to path
+        target = prev[target]
+    reverse path
+    return path

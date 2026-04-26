@@ -1,5 +1,12 @@
 """
-Purpose: Diksktra's Algorithm to find the shortest path between hospitals
+Purpose: Traverse graph using Diksktra's Algorithm to find the shortest path between hospitals
+* Use MinHeap to keep track of visited nodes
+* Use priority queue to contain all vertices in Graph
+
+Nodes: Hospitals
+Edges: Roads connecting hospitals
+Type: Undirected, weighted
+Weights: Rounded distance (miles) from one hospital to another
 """
 
 from math import inf
@@ -23,7 +30,8 @@ def dijkstra(graph, start):
 
         for neighbor, weight in graph[node]:
             new_dist = current_dist + weight
-
+            
+            #Relaxation
             if new_dist < dist[neighbor]:
                 dist[neighbor] = new_dist
                 prev[neighbor] = node
